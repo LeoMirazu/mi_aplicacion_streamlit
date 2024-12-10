@@ -4,7 +4,7 @@ from sklearn.ensemble import RandomForestRegressor
 import joblib
 
 # 1. Cargar los datos (reemplaza con tus datos reales o sintéticos)
-data = pd.read_csv("C:\\Users\\Leonardo\\Modelos Refinería\\Datos sinteticos\\datos_petroleo_sinteticos.csv")
+data = pd.read_csv("C:\\Users\\Leonardo\\Modelos Refinería\\Datos sinteticos\\datos_petroleo_sinteticos_ppm_D86.csv")
 
 # 2. Dividir datos en características (X) y etiquetas (y)
 X = data[['API', 'Azufre']]  # Entradas

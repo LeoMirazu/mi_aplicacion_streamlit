@@ -12,8 +12,8 @@ st.title("Predicción de Curva de Destilación ASTM D86")
 st.markdown("Esta aplicación permite predecir la curva de destilación para un petróleo a partir de su gravedad API y contenido de azufre.")
 
 # Entrada del usuario
-api = st.number_input("Gravedad API", min_value=20.0, max_value=45.0, value=32.11)
-azufre = st.number_input("Contenido de Azufre (ppm)", min_value=500, max_value=10000, value=6000)
+api = st.number_input("Gravedad API", min_value=20.0, max_value=65.0, value=32.11)
+azufre = st.number_input("Contenido de Azufre (ppm)", min_value=0, max_value=10000, value=6000)
 
 # Botón para predecir
 if st.button("Predecir"):
@@ -25,7 +25,7 @@ if st.button("Predecir"):
 
     # Crear tabla de resultados con los volúmenes especificados
     volumenes = np.linspace(0, 100, len(curva_predicha))  # % de volumen destilado
-    vol_destilados = np.arange(0, 100, 10)  # Volúmenes de interés: 0%, 10%, ..., 90%
+    vol_destilados = np.arange(0, 100, 5)  # Volúmenes de interés: 0%, 10%, ..., 90%
     temperaturas_interpoladas = np.interp(vol_destilados, volumenes, curva_predicha)
 
     resultados = pd.DataFrame({
